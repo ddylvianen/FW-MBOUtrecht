@@ -1,0 +1,4 @@
+een webapp voor een bedrijf die sneakers en andere dingens verkoopt
+
+
+dummy data: items, users, orders, payment_info, shipping_data
