@@ -10,3 +10,7 @@ Route::get('/contact', [App\Http\Controllers\ContactController::class, 'showForm
 Route::post('/contact', [App\Http\Controllers\ContactController::class, 'submitForm'])->name('contact.submit');
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -7,12 +7,12 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
-    <x-header />
-
-    <main>
-        @yield('content')
-    </main>
-
-    <x-footer />
+    <div class="d-flex flex-column min-vh-100">
+        <x-header/>
+        <main class="flex-grow-1">
+            @yield('content')
+        </main>
+        <x-footer />
+    </div>
 </body>
 </html>
