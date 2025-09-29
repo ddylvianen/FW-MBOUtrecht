@@ -1,29 +1,35 @@
 @extends('layouts.app')
 
 @section('content')
-    <div>
-        <div class="hero">
-            <h1>Welcome to Sneaks</h1>
-            <p>Your one-stop shop for the latest sneakers</p>
-        </div>
-        <div class="featured-products">
-            <h2>Featured Products</h2>
-        </div>
+    <x-section :class="' container-lg clearfix my-5'">
+            <img src="https://placehold.co/750X500" class="col-md-5 float-md-end mb-3 ms-md-3 img-fluid" alt="...">
+            
+            <h1 class="mb-4">Welcome to Sneaks</h1>
+            <p>
+                A paragraph of placeholder text. We’re using it here to show the use of the clearfix class. We’re adding
+                quite a few meaningless phrases here to demonstrate how the columns interact here with the floated image.
+            </p>
+            <p>
+                As you can see the paragraphs gracefully wrap around the floated image. Now imagine how this would look with
+                some actual content in here, rather than just this boring placeholder text that goes on and on, but actually
+                conveys no tangible information at. It simply takes up space and should not really be read.
+            </p>
+            <p>
+                And yet, here you are, still persevering in reading this placeholder text, hoping for some more insights, or
+                some hidden easter egg of content. A joke, perhaps. Unfortunately, there’s none of that here.
+            </p>
+    </x-section>
 
-        <div class="hero">
-            <h1>Welcome to Sneaks</h1>
-            <p>Your one-stop shop for the latest sneakers</p>
+    <x-section>
+        <h2>Featured Products</h2>
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-lx-5 g-2 g-lg-3">
+                @foreach ($products as $product)
+                    <div class="p-3">
+                        <x-product-card :product="$product" />
+                    </div>
+                @endforeach
+            </div>
         </div>
-
-        <div class="about">
-            <h2>About Us</h2>
-            <p>At Sneaks, we are passionate about sneakers and committed to providing our customers with the best selection of the latest styles and trends.</p>
-        </div>
-
-        <div class="quality-info">
-            <h2>Quality and Authenticity</h2>
-            <p>We guarantee the authenticity of all our products and ensure that they meet the highest quality standards.</p>
-        </div>
-    </div>
+    </x-section>
 @endsection
-

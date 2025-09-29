@@ -1,0 +1,10 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#f8f9fa"/>
+  <rect x="50" y="50" width="300" height="200" fill="#ffffff" stroke="#dee2e6" stroke-width="2"/>
+  <text x="200" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#495057">Chuck Taylor All Star</text>
+  <text x="200" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#6c757d">Casual Sneaker</text>
+  <polygon points="170,170 230,170 230,190 200,200 170,190" fill="#000000"/>
+  <circle cx="200" cy="180" r="20" fill="none" stroke="#000000" stroke-width="2"/>
+  <text x="200" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#000000">CONVERSE</text>
+  <text x="200" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#28a745">$59.99</text>
+</svg>

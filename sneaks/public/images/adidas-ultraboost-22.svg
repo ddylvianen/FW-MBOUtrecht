@@ -1,0 +1,9 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#f8f9fa"/>
+  <rect x="50" y="50" width="300" height="200" fill="#ffffff" stroke="#dee2e6" stroke-width="2"/>
+  <text x="200" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#495057">Adidas Ultraboost 22</text>
+  <text x="200" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#6c757d">Running Shoe</text>
+  <polygon points="170,160 200,180 230,160 230,200 170,200" fill="#000000"/>
+  <polygon points="175,165 195,175 225,165 225,195 175,195" fill="#ffffff"/>
+  <text x="200" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#28a745">$189.99</text>
+</svg>

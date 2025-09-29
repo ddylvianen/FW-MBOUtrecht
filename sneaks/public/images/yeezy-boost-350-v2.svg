@@ -1,0 +1,16 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="yeezyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8f9fa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e9ecef;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="#f8f9fa"/>
+  <rect x="50" y="50" width="300" height="200" fill="#ffffff" stroke="#dee2e6" stroke-width="2"/>
+  <text x="200" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#495057">Yeezy Boost 350 V2</text>
+  <text x="200" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#6c757d">Limited Edition</text>
+  <ellipse cx="200" cy="180" rx="40" ry="15" fill="url(#yeezyGrad)" stroke="#adb5bd" stroke-width="1"/>
+  <text x="200" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#6c757d">YEEZY</text>
+  <rect x="160" y="200" width="80" height="3" fill="#ffc107"/>
+  <text x="200" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#dc3545">$229.99</text>
+</svg>

@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Gate;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -17,8 +18,13 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      */
-    public function boot(): void
+    public function boot()
     {
-        //
+         // Implicitly grant "Admin" role all permission checks using can()
+         Gate::before(function ($user, $ability) {
+             if ($user->hasRole('Admin')) {
+                 return true;
+             }
+         });
     }
 }

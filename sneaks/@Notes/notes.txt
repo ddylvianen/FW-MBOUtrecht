@@ -1,0 +1,19 @@
+een webapp voor een bedrijf die sneakers en andere dingens verkoopt
+
+paginas: homepage, product pagina(addtocart etc), item-info pagina,
+cart pagina(checkout stappen sso), user profile pagina, login/sign up pagina
+en product dashboard
+
+stappen database inrichten
+data op de juiste pagina ophalen
+add to cart laten werken
+user inlog + rollen regelen
+bestelling afronden laten werken(email met betaal verzoek etc)
+admin dashboard maken(items toevoegen, bestellingen zien, users managen, sales toevoegen, catogoriseren, etc)
+
+
+
+tabellen die nodig zijn:
+user + rollen(standard laravel)
+products, catogory, leveranciers, cart(temp table?), orders, shippingadress
+invoices

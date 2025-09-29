@@ -1,0 +1,10 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#f8f9fa"/>
+  <rect x="50" y="50" width="300" height="200" fill="#ffffff" stroke="#dee2e6" stroke-width="2"/>
+  <text x="200" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#495057">Vans Old Skool</text>
+  <text x="200" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#6c757d">Skate Shoe</text>
+  <path d="M170 170 Q200 160 230 170 L230 190 Q200 200 170 190 Z" fill="#000000"/>
+  <path d="M175 175 Q200 165 225 175 L225 185 Q200 195 175 185 Z" fill="#ffffff"/>
+  <text x="200" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#dc3545">VANS</text>
+  <text x="200" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#28a745">$64.99</text>
+</svg>

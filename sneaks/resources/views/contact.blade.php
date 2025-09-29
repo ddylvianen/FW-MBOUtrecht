@@ -1,10 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="content">
+    <x-section>
         <h1>Contact Us</h1>
         <p>If you have any questions or inquiries, please feel free to reach out to us!</p>
-
+    </x-section>
+    <x-section>
         <form action="{{ route('contact.submit') }}" method="POST">
             @csrf
             <div class="form-group">
@@ -21,5 +22,5 @@
             </div>
             <button type="submit" class="btn btn-primary">Send Message</button>
         </form>
-    </div>
+    </x-section>
 @endsection

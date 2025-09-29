@@ -11,20 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('shipping_data', function (Blueprint $table) {
+        Schema::create('invoices', function (Blueprint $table) {
             $table->id();
             $table->foreignId('order_id')->constrained('orders')->onDelete('cascade');
-            $table->string('recipient_name');
-            $table->string('address_line1');
-            $table->string('address_line2')->nullable();
-            $table->string('city');
-            $table->string('state');
-            $table->string('postal_code');
-            $table->string('country');
+            $table->string('invoice_number')->unique();
+            $table->decimal('amount', 10, 2);
+            $table->date('issued_date');
+            $table->date('due_date');
+            $table->string('status')->default('unpaid');
 
             $table->timestamps();
             $table->softDeletes();
-            $table->string('comments')->nullable();
         });
     }
 
@@ -33,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('invoices');
     }
 };
