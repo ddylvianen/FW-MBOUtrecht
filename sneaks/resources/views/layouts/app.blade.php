@@ -7,9 +7,9 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
-    <div class="min-vh-100 max-width-100">
+    <div class="min-vh-100 max-width-100 flex-column d-flex items-center justify-center">
         <x-header/>
-        <main class="container-fluid">
+        <main class="container-fluid flex-grow-1">
             @yield('content')
         </main>
         <x-footer />

@@ -1,4 +1,4 @@
-<a href="#" class="card text-decoration-none text-dark {{ $class ?? '' }}" style="height: 100%; display: flex; flex-direction: column;">
+<a href="{{ route('products.show', $product->id) }}" class="card text-decoration-none text-dark {{ $class ?? '' }}" style="height: 100%; display: flex; flex-direction: column;">
     <img src="{{ asset($product->image_path) }}" class="img-fluid rounded-top" alt="...">
     <div class="card-body d-flex flex-column flex-grow-1">
         <h5 class="card-title">{{ $product->name }}</h5>

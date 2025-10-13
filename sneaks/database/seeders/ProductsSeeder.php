@@ -5,7 +5,6 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Carbon\Carbon;
 
 class ProductsSeeder extends Seeder
 {
@@ -15,88 +14,104 @@ class ProductsSeeder extends Seeder
     public function run(): void
     {
         $now = now();
-        
-        DB::table('products')->insert([
-            [
-                'name' => 'Nike Air Max 270',
-                'description' => 'The Nike Air Max 270 delivers visible Max Air cushioning underfoot and a sleek, modern silhouette.',
-                'price' => 129.99,
-                'stock' => 50,
-                'image_path' => 'images/nike-air-max-270.svg',
-                'comment' => 'Popular running shoe',
+
+        // Array of image paths to rotate through
+        $images = [
+            'images/nike-air-max-270.svg',
+            'images/adidas-ultraboost-22.svg',
+            'images/jordan-aj1-retro-high.svg',
+            'images/converse-chuck-taylor.svg',
+            'images/vans-old-skool.svg',
+            'images/new-balance-990v5.svg',
+            'images/puma-rs-x.svg',
+            'images/yeezy-boost-350-v2.svg',
+        ];
+
+        // Product name variations
+        $nameVariations = [
+            'Air Max', 'Boost Runner', 'High Top Elite', 'Canvas Classic', 'Skate Pro',
+            'Heritage Runner', 'Thunder Spec', 'Cloud Walker', 'Street Fighter', 'Urban Legend',
+            'Night Runner', 'Day Walker', 'Speed Demon', 'Comfort Zone', 'Style Master',
+            'Retro Vibes', 'Modern Classic', 'Future Tech', 'Old School', 'New Wave',
+            'Sport Elite', 'Casual King', 'Premium Choice', 'Budget Friendly', 'Limited Drop',
+            'Classic Flow', 'Dynamic Force', 'Power Step', 'Smooth Glide', 'Peak Performance',
+            'Elite Series', 'Urban Explorer', 'Street Ready', 'Active Life', 'Motion Control',
+            'Flex Zone', 'Impact Pro', 'Velocity Max', 'Comfort Plus', 'Style Icon',
+            'Performance Edge', 'City Walker', 'Sport Fusion', 'Trend Setter', 'Active Wear',
+            'Premium Line', 'Street Style', 'Dynamic Step', 'Comfort First', 'Urban Style'
+        ];
+
+        // Description variations
+        $descriptions = [
+            'Premium athletic footwear designed for maximum comfort and style.',
+            'Lightweight construction with advanced cushioning technology.',
+            'Durable materials combined with modern design aesthetics.',
+            'Classic silhouette updated with contemporary features.',
+            'Perfect blend of performance and street-ready style.',
+            'Breathable upper with responsive midsole technology.',
+            'Versatile sneaker suitable for various activities.',
+            'Engineered for comfort during extended wear.',
+            'Bold design statement with functional performance.',
+            'Minimalist approach to maximum comfort delivery.',
+            'Innovative materials meet timeless design principles.',
+            'Street-inspired aesthetics with athletic performance.',
+            'Comfort-first design without compromising on style.',
+            'Advanced technology wrapped in sleek packaging.',
+            'Classic comfort redefined for modern lifestyle.',
+            'Performance-driven design with casual appeal.',
+            'Sustainable materials meet cutting-edge design.',
+            'Retro-inspired with contemporary comfort features.',
+            'Engineered for the urban explorer and athlete.',
+            'Premium craftsmanship in every detail and stitch.',
+            'Dynamic support system for all-day comfort.',
+            'Innovative sole technology for superior grip.',
+            'Breathable mesh construction for optimal airflow.',
+            'Cushioned heel and arch support for stability.',
+            'Weather-resistant materials for durability.',
+            'Flexible outsole design for natural movement.',
+            'Memory foam insole for personalized comfort.',
+            'Anti-slip technology for confident steps.',
+            'Shock-absorbing midsole for impact protection.',
+            'Stylish design meets functional performance.',
+            'Ergonomic fit for all-day wearing comfort.',
+            'High-quality materials ensure long-lasting wear.',
+            'Versatile style suitable for any occasion.',
+            'Advanced ventilation system keeps feet cool.',
+            'Precision-engineered for optimal performance.',
+            'Contemporary design with classic appeal.',
+            'Lightweight yet durable construction quality.',
+            'Enhanced traction for superior ground contact.',
+            'Comfortable padding throughout the interior.',
+            'Modern aesthetics with timeless functionality.',
+            'Professional design meets casual comfort.',
+            'Superior arch support for foot health.',
+            'Quick-dry materials for active lifestyles.',
+            'Reinforced construction for extended durability.',
+            'Seamless design reduces pressure points.',
+            'Advanced heel stabilization technology.',
+            'Moisture-wicking interior for dry comfort.',
+            'Flexible design adapts to foot movement.',
+            'Premium leather construction with modern touches.',
+            'Athletic performance in a stylish package.'
+        ];
+
+        $products = [];
+        for ($i = 1; $i <= 50; $i++) {
+            $imageIndex = ($i - 1) % 8; // Rotate through 8 images
+            $nameIndex = ($i - 1) % count($nameVariations);
+            $descIndex = ($i - 1) % count($descriptions);
+
+            $products[] = [
+                'name' => $nameVariations[$nameIndex] . ' ' . ($i <= 25 ? 'v' . ($i % 5 + 1) : 'Pro ' . ($i % 10 + 1)),
+                'description' => $descriptions[$descIndex],
+                'price' => rand(3999, 29999) / 100, // Random price between $39.99 and $299.99
+                'stock' => rand(5, 150),
+                'image_path' => $images[$imageIndex],
                 'created_at' => $now,
                 'updated_at' => $now,
-            ],
-            [
-                'name' => 'Adidas Ultraboost 22',
-                'description' => 'Experience endless energy return with the responsive Boost midsole and Primeknit+ upper.',
-                'price' => 189.99,
-                'stock' => 30,
-                'image_path' => 'images/adidas-ultraboost-22.svg',
-                'comment' => 'Premium running shoe',
-                'created_at' => $now,
-                'updated_at' => $now,
-            ],
-            [
-                'name' => 'Jordan Air Jordan 1 Retro High',
-                'description' => 'The original basketball icon returns with classic styling and premium materials.',
-                'price' => 169.99,
-                'stock' => 25,
-                'image_path' => 'images/jordan-aj1-retro-high.svg',
-                'comment' => 'Classic basketball shoe',
-                'created_at' => $now,
-                'updated_at' => $now,
-            ],
-            [
-                'name' => 'Converse Chuck Taylor All Star',
-                'description' => 'The timeless canvas sneaker that started it all, perfect for everyday casual wear.',
-                'price' => 59.99,
-                'stock' => 100,
-                'image_path' => 'images/converse-chuck-taylor.svg',
-                'comment' => 'Classic casual sneaker',
-                'created_at' => $now,
-                'updated_at' => $now,
-            ],
-            [
-                'name' => 'Vans Old Skool',
-                'description' => 'The classic skate shoe with signature side stripe and durable suede and canvas construction.',
-                'price' => 64.99,
-                'stock' => 75,
-                'image_path' => 'images/vans-old-skool.svg',
-                'comment' => 'Popular skate shoe',
-                'created_at' => $now,
-                'updated_at' => $now,
-            ],
-            [
-                'name' => 'New Balance 990v5',
-                'description' => 'American-made premium running shoe with superior comfort and craftsmanship.',
-                'price' => 199.99,
-                'stock' => 20,
-                'image_path' => 'images/new-balance-990v5.svg',
-                'comment' => 'Premium American-made sneaker',
-                'created_at' => $now,
-                'updated_at' => $now,
-            ],
-            [
-                'name' => 'Puma RS-X',
-                'description' => 'Bold, chunky silhouette with modern technology and retro-inspired design.',
-                'price' => 109.99,
-                'stock' => 40,
-                'image_path' => 'images/puma-rs-x.svg',
-                'comment' => 'Trendy lifestyle sneaker',
-                'created_at' => $now,
-                'updated_at' => $now,
-            ],
-            [
-                'name' => 'Yeezy Boost 350 V2',
-                'description' => 'Limited edition sneaker with Primeknit upper and signature Boost cushioning.',
-                'price' => 229.99,
-                'stock' => 15,
-                'image_path' => 'images/yeezy-boost-350-v2.svg',
-                'comment' => 'Limited edition release',
-                'created_at' => $now,
-                'updated_at' => $now,
-            ],
-        ]);
+            ];
+        }
+
+        DB::table('products')->insert($products);
     }
 }

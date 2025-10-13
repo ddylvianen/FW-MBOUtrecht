@@ -17,3 +17,12 @@ tabellen die nodig zijn:
 user + rollen(standard laravel)
 products, catogory, leveranciers, cart(temp table?), orders, shippingadress
 invoices
+
+
+
+nog todo:
+-orders kunnen plaatsen
+-wishlist
+-cart maken
+-gebruikers aan kunnen maken
+-eigenaar dashboard
