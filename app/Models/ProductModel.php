@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Products extends Model
+class ProductModel extends Model
 {
     //
     protected $id = 'id';
-    protected $model = 'products';
+    protected $table = 'products';
 }

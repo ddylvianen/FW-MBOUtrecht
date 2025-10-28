@@ -1,9 +1,15 @@
-@extends('layouts.app')
-
-@section('content')
-    <x-section :class="'container-lg my-5'">
-        <h1 class="mb-4">Products</h1>
-        <x-products-table :products="$products" />
-        {{ $products->links('custom.pagination') }}
-    </x-section>
-@endsection
+<x-app-layout>
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900 dark:text-gray-100">
+                    <h1 class="text-3xl font-bold mb-6">Products</h1>
+                    <x-products-table :products="$products" />
+                    <div class="mt-6">
+                        {{ $products->links('custom.pagination') }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</x-app-layout>

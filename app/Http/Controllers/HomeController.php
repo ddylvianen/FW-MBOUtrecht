@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-
 use Illuminate\Http\Request;
-use App\Models\products;
+use App\Models\ProductModel;
 class HomeController extends Controller
 {
     /**
@@ -25,7 +24,7 @@ class HomeController extends Controller
     public function index()
     {
 
-        $products = products::limit(4)->get();
+        $products = ProductModel::limit(4)->get();
 
         return view('home', compact('products'));
     }

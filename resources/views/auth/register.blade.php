@@ -1,77 +1,98 @@
-@extends('layouts.app')
+<x-app-layout>
+    <div class="py-12">
+        <div class="max-w-md mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900 dark:text-gray-100">
+            <div>
+                <h2 class="mt-6 text-center text-3xl font-extrabold text-white">
+                    {{ __('Create Account') }}
+                </h2>
+                <p class="mt-2 text-center text-sm text-white">
+                    {{ __('Join us today') }}
+                </p>
+            </div>
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+            <form method="POST" action="{{ route('register') }}" class="mt-8 space-y-6">
+                @csrf
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
+                <!-- Name -->
+                <div>
+                    <label for="name" class="block text-sm font-bold text-white">
+                        {{ __('Full Name') }}
+                    </label>
+                    <input id="name" 
+                           name="name" 
+                           type="text" 
+                           value="{{ old('name') }}"
+                           required 
+                           autofocus 
+                           autocomplete="name"
+                           class="mt-1 block w-full px-4 py-3 bg-white text-gray-900 border-2 border-gray-400 rounded-lg shadow-sm placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 transition duration-150 ease-in-out">
+                    <x-input-error :messages="$errors->get('name')" class="mt-2" />
+                </div>
 
-                        <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
+                <!-- Email Address -->
+                <div>
+                    <label for="email" class="block text-sm font-bold text-white">
+                        {{ __('Email Address') }}
+                    </label>
+                    <input id="email" 
+                           name="email" 
+                           type="email" 
+                           value="{{ old('email') }}"
+                           required 
+                           autocomplete="username"
+                           class="mt-1 block w-full px-4 py-3 bg-white text-gray-900 border-2 border-gray-400 rounded-lg shadow-sm placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 transition duration-150 ease-in-out">
+                    <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                </div>
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                <!-- Password -->
+                <div>
+                    <label for="password" class="block text-sm font-bold text-white">
+                        {{ __('Password') }}
+                    </label>
+                    <input id="password" 
+                           name="password" 
+                           type="password" 
+                           required 
+                           autocomplete="new-password"
+                           class="mt-1 block w-full px-4 py-3 bg-white text-gray-900 border-2 border-gray-400 rounded-lg shadow-sm placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 transition duration-150 ease-in-out">
+                    <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                </div>
 
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+                <!-- Confirm Password -->
+                <div>
+                    <label for="password_confirmation" class="block text-sm font-bold text-white">
+                        {{ __('Confirm Password') }}
+                    </label>
+                    <input id="password_confirmation" 
+                           name="password_confirmation" 
+                           type="password" 
+                           required 
+                           autocomplete="new-password"
+                           class="mt-1 block w-full px-4 py-3 bg-white text-gray-900 border-2 border-gray-400 rounded-lg shadow-sm placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 transition duration-150 ease-in-out">
+                    <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+                </div>
 
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+                <div>
+                    <button type="submit" 
+                            class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-lg text-base font-bold text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out">
+                        {{ __('Create Account') }}
+                    </button>
+                </div>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                                <!-- Login Link -->
+                <div class="text-center">
+                    <span class="text-sm font-medium text-white">
+                        {{ __('Already have an account?') }}
+                    </span>
+                    <a href="{{ route('login') }}" class="font-bold text-blue-400 hover:text-blue-300 underline ml-1">
+                        {{ __('Sign in') }}
+                    </a>
+                </div>
+            </form>
                 </div>
             </div>
         </div>
     </div>
-</div>
-@endsection
+</x-app-layout>
