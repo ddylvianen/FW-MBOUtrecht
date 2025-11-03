@@ -4,10 +4,10 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
             <div>
-                <h2 class="mt-6 text-center text-3xl font-extrabold text-white">
+                <h2 class="mt-6 text-center text-3xl font-extrabold text-black">
                     {{ __('Forgot Password?') }}
                 </h2>
-                <p class="mt-4 text-center text-sm font-medium text-white">
+                <p class="mt-4 text-center text-sm font-medium text-black">
                     {{ __('No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
                 </p>
             </div>
@@ -20,7 +20,7 @@
 
                 <!-- Email Address -->
                 <div>
-                    <label for="email" class="block text-sm font-bold text-white">
+                    <label for="email" class="block text-sm font-bold text-black">
                         {{ __('Email Address') }}
                     </label>
                     <input id="email" 
@@ -35,7 +35,7 @@
 
                 <div>
                     <button type="submit" 
-                            class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-lg text-base font-bold text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out">
+                            class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-lg text-base font-bold text-black bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out">
                         {{ __('Email Password Reset Link') }}
                     </button>
                 </div>

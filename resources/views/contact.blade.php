@@ -4,8 +4,8 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
             <div>
-                <h1 class="text-center text-3xl font-extrabold text-white mb-4">Contact Us</h1>
-                <p class="text-center text-base font-medium text-white mb-6">If you have any questions or inquiries, please feel free to reach out to us!</p>
+                <h1 class="text-center text-3xl font-extrabold text-black mb-4">Contact Us</h1>
+                <p class="text-center text-base font-medium text-black mb-6">If you have any questions or inquiries, please feel free to reach out to us!</p>
             </div>
 
             <form action="{{ route('contact.submit') }}" method="POST" class="space-y-6">
@@ -13,7 +13,7 @@
                 
                 <!-- Name -->
                 <div>
-                    <label for="name" class="block text-sm font-bold text-white">
+                    <label for="name" class="block text-sm font-bold text-black">
                         {{ __('Name') }}
                     </label>
                     <input id="name" 
@@ -25,7 +25,7 @@
 
                 <!-- Email -->
                 <div>
-                    <label for="email" class="block text-sm font-bold text-white">
+                    <label for="email" class="block text-sm font-bold text-black">
                         {{ __('Email') }}
                     </label>
                     <input id="email" 
@@ -37,7 +37,7 @@
 
                 <!-- Message -->
                 <div>
-                    <label for="message" class="block text-sm font-bold text-white">
+                    <label for="message" class="block text-sm font-bold text-black">
                         {{ __('Message') }}
                     </label>
                     <textarea id="message" 
@@ -50,7 +50,7 @@
                 <!-- Submit Button -->
                 <div>
                     <button type="submit" 
-                            class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-lg text-base font-bold text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out">
+                            class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-lg text-base font-bold text-black bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out">
                         {{ __('Send Message') }}
                     </button>
                 </div>

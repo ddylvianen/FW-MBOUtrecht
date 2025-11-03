@@ -15,17 +15,8 @@ class ProductsSeeder extends Seeder
     {
         $now = now();
 
-        // Array of image paths to rotate through
-        $images = [
-            'images/nike-air-max-270.svg',
-            'images/adidas-ultraboost-22.svg',
-            'images/jordan-aj1-retro-high.svg',
-            'images/converse-chuck-taylor.svg',
-            'images/vans-old-skool.svg',
-            'images/new-balance-990v5.svg',
-            'images/puma-rs-x.svg',
-            'images/yeezy-boost-350-v2.svg',
-        ];
+        // Using placeholder image for all products
+        $placeholderImage = 'images/image.png';
 
         // Product name variations
         $nameVariations = [
@@ -97,7 +88,6 @@ class ProductsSeeder extends Seeder
 
         $products = [];
         for ($i = 1; $i <= 50; $i++) {
-            $imageIndex = ($i - 1) % 8; // Rotate through 8 images
             $nameIndex = ($i - 1) % count($nameVariations);
             $descIndex = ($i - 1) % count($descriptions);
 
@@ -106,7 +96,7 @@ class ProductsSeeder extends Seeder
                 'description' => $descriptions[$descIndex],
                 'price' => rand(3999, 29999) / 100, // Random price between $39.99 and $299.99
                 'stock' => rand(5, 150),
-                'image_path' => $images[$imageIndex],
+                'image_path' => $placeholderImage,
                 'created_at' => $now,
                 'updated_at' => $now,
             ];

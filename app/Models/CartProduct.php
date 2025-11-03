@@ -1,0 +1,33 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Models\ProductModel;
+use App\Models\Cart;
+
+class CartProduct extends Model
+{
+    use SoftDeletes;
+    
+    protected $table = 'cart_products';
+
+    protected $fillable = [
+        'cart_id',
+        'product_id',
+        'quantity',
+        'price',
+    ];
+
+    public function product(): BelongsTo
+    {
+        return $this->belongsTo(ProductModel::class, 'product_id');
+    }
+
+    public function cart(): BelongsTo
+    {
+        return $this->belongsTo(Cart::class, 'cart_id');
+    }
+}

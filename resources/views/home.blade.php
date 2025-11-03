@@ -27,12 +27,10 @@
                     </div>
 
                     <div class="mt-12">
-                        <h2 class="text-2xl font-bold mb-6">Featured Products</h2>
+                        <h2 class="text-2xl font-bold mb-6 text-black">Featured Products</h2>
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                             @foreach ($products as $product)
-                                <div class="p-3">
-                                    <x-product-card :product="$product" />
-                                </div>
+                                <x-product-card :product="$product" />
                             @endforeach
                         </div>
                     </div>
